@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Ads Mentorship | Scale Profitably</title>
+    <meta
+      name="description"
+      content="1:1 Google Ads mentorship to help freelancers, business owners, and media buyers launch profitable campaigns with confidence."
+    />
+    <style>
+      :root {
+        --bg: #0b1020;
+        --panel: #121a2f;
+        --panel-soft: #1a2540;
+        --text: #f4f7ff;
+        --muted: #a4b0cf;
+        --brand: #4f8cff;
+        --brand-2: #7f56d9;
+        --success: #22c55e;
+        --max: 1120px;
+        --radius: 18px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        background: radial-gradient(circle at top right, #21336a 0%, var(--bg) 55%);
+        color: var(--text);
+        line-height: 1.55;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(100% - 2rem, var(--max));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(8px);
+        background: rgba(11, 16, 32, 0.7);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+      }
+
+      .topbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        padding: 0.9rem 0;
+      }
+
+      .brand {
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+
+      .pill {
+        font-size: 0.75rem;
+        padding: 0.28rem 0.62rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        color: var(--muted);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        cursor: pointer;
+        font-weight: 700;
+        border-radius: 12px;
+        padding: 0.92rem 1.15rem;
+        transition: transform 0.15s ease, box-shadow 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn-primary {
+        color: #fff;
+        background: linear-gradient(135deg, var(--success), #16a34a);
+        box-shadow: 0 10px 25px rgba(34, 197, 94, 0.35);
+      }
+
+      .btn-secondary {
+        color: #fff;
+        background: linear-gradient(135deg, var(--brand), var(--brand-2));
+        box-shadow: 0 10px 25px rgba(79, 140, 255, 0.3);
+      }
+
+      .hero {
+        padding: 2.4rem 0 1.2rem;
+      }
+
+      .hero-grid {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      .eyebrow {
+        color: #bcd0ff;
+        font-weight: 600;
+        font-size: 0.85rem;
+        margin-bottom: 0.8rem;
+      }
+
+      h1 {
+        font-size: clamp(1.75rem, 4vw, 3rem);
+        line-height: 1.18;
+      }
+
+      .hero p {
+        margin-top: 1rem;
+        color: var(--muted);
+        max-width: 56ch;
+      }
+
+      .cta-group {
+        margin-top: 1.3rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      .trust-row {
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        font-size: 0.92rem;
+        color: #d7def8;
+      }
+
+      .card {
+        background: linear-gradient(165deg, var(--panel) 0%, var(--panel-soft) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: var(--radius);
+        padding: 1.2rem;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18);
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+        margin-top: 1rem;
+      }
+
+      .stat {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        padding: 0.9rem;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 1.2rem;
+      }
+
+      .section {
+        padding: 1.2rem 0;
+      }
+
+      .section h2 {
+        font-size: clamp(1.35rem, 3vw, 2rem);
+        margin-bottom: 1rem;
+      }
+
+      .grid-3 {
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .checklist {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 0.65rem;
+      }
+
+      .checklist li {
+        position: relative;
+        padding-left: 1.5rem;
+        color: #d9e2ff;
+      }
+
+      .checklist li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #6ee7b7;
+        font-weight: 700;
+      }
+
+      .testimonial {
+        color: #dae4ff;
+        font-style: italic;
+      }
+
+      .author {
+        margin-top: 0.6rem;
+        color: var(--muted);
+        font-style: normal;
+        font-size: 0.9rem;
+      }
+
+      .faq details {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        padding: 0.9rem;
+      }
+
+      .faq details + details {
+        margin-top: 0.7rem;
+      }
+
+      .faq summary {
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+      .faq p {
+        margin-top: 0.6rem;
+        color: var(--muted);
+      }
+
+      .footer {
+        text-align: center;
+        color: #98a8cf;
+        font-size: 0.87rem;
+        padding: 1.1rem 0 5.2rem;
+      }
+
+      .sticky-mobile-cta {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0.8rem 1rem calc(0.8rem + env(safe-area-inset-bottom));
+        background: rgba(11, 16, 32, 0.94);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        z-index: 60;
+      }
+
+      .sticky-mobile-cta .btn {
+        width: 100%;
+      }
+
+      @media (min-width: 760px) {
+        .hero {
+          padding: 3.5rem 0 1.8rem;
+        }
+
+        .hero-grid {
+          grid-template-columns: 1.2fr 0.8fr;
+          align-items: center;
+        }
+
+        .grid-3 {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .sticky-mobile-cta {
+          display: none;
+        }
+
+        .footer {
+          padding-bottom: 1.4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">Google Ads Mentor</div>
+        <span class="pill">Limited 1:1 Spots This Month</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <p class="eyebrow">Google Ads Mentorship for Serious Growth</p>
+            <h1>Stop Burning Budget. Learn a Proven Google Ads System in 6 Weeks.</h1>
+            <p>
+              Work directly with a Google Ads strategist to build campaigns that convert,
+              lower cost per lead, and scale profitably. Personalized guidance for business
+              owners, freelancers, and media buyers.
+            </p>
+            <div class="cta-group">
+              <a class="btn btn-primary" href="https://wa.me/919999999999?text=Hi%20I%20want%20details%20about%20Google%20Ads%20Mentorship" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+              <a class="btn btn-secondary" href="#program">See Program Details</a>
+            </div>
+            <div class="trust-row">
+              <span>✅ 120+ mentees trained</span>
+              <span>✅ Avg. 31% CPL reduction</span>
+              <span>✅ Weekly live review calls</span>
+            </div>
+          </div>
+
+          <aside class="card" aria-label="Mentorship Highlights">
+            <h3>What You Get</h3>
+            <ul class="checklist" style="margin-top: 0.8rem">
+              <li>1:1 account audit + custom action plan</li>
+              <li>Keyword, ad copy & landing page framework</li>
+              <li>Bidding strategy and scale roadmap</li>
+              <li>Conversion tracking setup (GA4 + GTM)</li>
+              <li>WhatsApp support between sessions</li>
+            </ul>
+            <div class="stats">
+              <div class="stat">
+                <strong>6 Weeks</strong>
+                <span>Intensive mentorship sprint</span>
+              </div>
+              <div class="stat">
+                <strong>1:1</strong>
+                <span>Tailored to your niche</span>
+              </div>
+              <div class="stat">
+                <strong>4 Calls</strong>
+                <span>Deep-dive strategy reviews</span>
+              </div>
+              <div class="stat">
+                <strong>24h</strong>
+                <span>Support response window</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="program">
+        <div class="container">
+          <h2>Who This Mentorship Is For</h2>
+          <div class="grid-3">
+            <article class="card">
+              <h3>Business Owners</h3>
+              <p style="margin-top: 0.7rem; color: var(--muted)">
+                Build a predictable lead engine and stop relying on agencies that hide what
+                they do.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Freelancers</h3>
+              <p style="margin-top: 0.7rem; color: var(--muted)">
+                Learn a repeatable system to get better client results and charge premium
+                retainers.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Performance Marketers</h3>
+              <p style="margin-top: 0.7rem; color: var(--muted)">
+                Advance from campaign execution to strategic scaling and full-funnel thinking.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>What We Cover (Week-by-Week)</h2>
+          <div class="grid-3">
+            <article class="card"><strong>Week 1-2:</strong> Account diagnosis, offer clarity, and high-intent campaign structure.</article>
+            <article class="card"><strong>Week 3-4:</strong> Ad copy psychology, creative testing, and landing page CRO improvements.</article>
+            <article class="card"><strong>Week 5-6:</strong> Smart bidding, budget scaling logic, and reporting dashboards.</article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>Results Mentees Share</h2>
+          <div class="grid-3">
+            <article class="card">
+              <p class="testimonial">
+                “Within 5 weeks, our cost per qualified lead dropped from ₹1,850 to ₹1,180.”
+              </p>
+              <p class="author">— E-commerce Founder, Mumbai</p>
+            </article>
+            <article class="card">
+              <p class="testimonial">
+                “I signed 3 high-ticket clients because I finally understood campaign strategy.”
+              </p>
+              <p class="author">— Freelance Media Buyer</p>
+            </article>
+            <article class="card">
+              <p class="testimonial">
+                “Best investment this year. No fluff, just practical execution every week.”
+              </p>
+              <p class="author">— SaaS Growth Lead</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section faq">
+        <div class="container">
+          <h2>Frequently Asked Questions</h2>
+          <details>
+            <summary>Is this beginner-friendly?</summary>
+            <p>Yes. The mentorship is customized to your level, from fundamentals to advanced scaling.</p>
+          </details>
+          <details>
+            <summary>How are sessions conducted?</summary>
+            <p>Sessions are live via Google Meet, with recordings and action steps shared after each call.</p>
+          </details>
+          <details>
+            <summary>How do I enroll?</summary>
+            <p>Click the WhatsApp button, share your business details, and we’ll guide you through onboarding.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container card" style="text-align: center">
+          <h2>Ready to Turn Google Ads into a Reliable Revenue Channel?</h2>
+          <p style="margin-top: 0.7rem; color: var(--muted)">
+            Book your mentorship screening call and get a custom growth roadmap.
+          </p>
+          <div class="cta-group" style="justify-content: center; margin-top: 1rem">
+            <a class="btn btn-primary" href="https://wa.me/919999999999?text=Hi%20I%20want%20to%20book%20a%20Google%20Ads%20mentorship%20call" target="_blank" rel="noopener noreferrer">Message on WhatsApp Now</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      © <span id="year"></span> Google Ads Mentor · All rights reserved.
+    </footer>
+
+    <div class="sticky-mobile-cta">
+      <a class="btn btn-primary" href="https://wa.me/919999999999?text=Hi%20I%20want%20Google%20Ads%20mentorship" target="_blank" rel="noopener noreferrer">💬 Start on WhatsApp</a>
+    </div>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
